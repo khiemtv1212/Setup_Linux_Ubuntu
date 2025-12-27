@@ -1,0 +1,151 @@
+1️⃣ Chọn giao diện nhẹ hơn GNOME (quan trọng nhất)
+
+GNOME mặc định khá nặng.
+
+### 👉 Cách 1 (nhẹ & dễ): cài **XFCE**
+
+```bash
+sudo apt update
+sudo apt install xubuntu-desktop -y
+```
+
+→ Đăng xuất → chọn **Xfce Session**
+
+💡 Nhẹ, mượt trên cả máy yếu.
+
+---
+
+### 👉 Cách 2 (đẹp & mượt): **KDE Plasma**
+
+```bash
+sudo apt install kubuntu-desktop -y
+```
+
+→ Đăng xuất → chọn **Plasma**
+
+💡 Nhiều hiệu ứng, tối ưu tốt, blur đẹp.
+
+---
+
+## 2️⃣ Tắt animation thừa (GNOME)
+
+Nếu vẫn dùng GNOME:
+
+```bash
+sudo apt install gnome-tweaks -y
+```
+
+Mở **Tweaks → Appearance**
+
+* ❌ Tắt **Animations**
+* ❌ Tắt hiệu ứng không cần thiết
+
+---
+
+## 3️⃣ Cài driver chuẩn (rất quan trọng)
+
+### Kiểm tra driver:
+
+```bash
+ubuntu-drivers devices
+```
+
+### Cài driver khuyến nghị:
+
+```bash
+sudo ubuntu-drivers autoinstall
+```
+
+👉 Đặc biệt quan trọng nếu:
+
+* NVIDIA
+* Laptop gaming
+
+---
+
+## 4️⃣ Tối ưu RAM (bật ZRAM)
+
+```bash
+sudo apt install zram-config -y
+```
+
+💡 Giúp máy ít RAM (4–8GB) mượt hơn rõ rệt.
+
+---
+
+## 5️⃣ Giảm swappiness (ít dùng ổ cứng)
+
+```bash
+sudo nano /etc/sysctl.conf
+```
+
+Thêm cuối file:
+
+```
+vm.swappiness=10
+```
+
+Lưu → reboot.
+
+---
+
+## 6️⃣ Tắt service không cần thiết
+
+Kiểm tra:
+
+```bash
+systemctl list-unit-files --type=service | grep enabled
+```
+
+Ví dụ tắt Bluetooth (nếu không dùng):
+
+```bash
+sudo systemctl disable bluetooth
+```
+
+---
+
+## 7️⃣ App nhẹ thay thế app nặng
+
+| Nặng           | Nhẹ         |
+| -------------- | ----------- |
+| Firefox snap   | Firefox deb |
+| GNOME Software | Synaptic    |
+| LibreOffice    | OnlyOffice  |
+
+Cài Synaptic:
+
+```bash
+sudo apt install synaptic -y
+```
+
+---
+
+## 8️⃣ Hiệu ứng mượt kiểu macOS (tuỳ chọn)
+
+Nếu bạn thích blur:
+
+### KDE:
+
+* System Settings → Desktop Effects
+* Bật **Blur**, **Compositor**
+
+### GNOME:
+
+```bash
+sudo apt install gnome-shell-extension-manager
+```
+
+→ cài:
+
+* Blur My Shell
+* Dash to Dock
+
+---
+
+## 9️⃣ Dọn rác hệ thống
+
+```bash
+sudo apt autoremove -y
+sudo apt clean
+```
