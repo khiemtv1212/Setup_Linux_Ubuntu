@@ -1,0 +1,9 @@
+🇯🇵 Linuxで日本語入力を設定する方法（きれい・簡単・完全ガイド）
+
+※ 主に Ubuntu / Linux Mint / Debian 向け
+（一般的なLinuxディストリビューションで使えます）
+✅ ステップ1：日本語入力システムをインストール（IBus + Mozc）
+
+ターミナルを開いて、以下のコマンドを実行してください。
+sudo apt update
+sudo apt install ibus ibus-mozc -y
